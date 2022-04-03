@@ -1179,10 +1179,10 @@ pragma solidity ^0.8.4;
 
 
 
-contract God1_2 is Initializable, ERC20Upgradeable, ERC20BurnableUpgradeable, PausableUpgradeable, OwnableUpgradeable {
+contract GodTimelock is Initializable, ERC20Upgradeable, ERC20BurnableUpgradeable, PausableUpgradeable, OwnableUpgradeable {
 
     function initialize() initializer public {
-        __ERC20_init("God1.2", "God1.2");
+        __ERC20_init("MatrixGod", "MatrixGod");
         __ERC20Burnable_init();
         __Pausable_init();
         __Ownable_init();
