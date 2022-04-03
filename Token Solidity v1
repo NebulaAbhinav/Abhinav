@@ -368,10 +368,13 @@ abstract contract OwnableUpgradeable is Initializable, ContextUpgradeable {
      * @dev Transfers ownership of the contract to a new account (`newOwner`).
      * Can only be called by the current owner.
      */
+/*
     function transferOwnership(address newOwner) public virtual onlyOwner {
         require(newOwner != address(0), "Ownable: new owner is the zero address");
         _transferOwnership(newOwner);
     }
+
+*/
 
     /**
      * @dev Transfers ownership of the contract to a new account (`newOwner`).
@@ -1194,6 +1197,8 @@ contract God1_2 is Initializable, ERC20Upgradeable, ERC20BurnableUpgradeable, Pa
     }
 
     function mint(address to, uint256 amount) public onlyOwner {
+        require(totalSupply()<100000000000*10**18,"Can't Mint more than 100 Billion");
+        require(amount<100000000000*10**18,"Can't Mint more than 100 Billion");
         _mint(to, amount);
     }
 
@@ -1203,6 +1208,7 @@ contract God1_2 is Initializable, ERC20Upgradeable, ERC20BurnableUpgradeable, Pa
         uint256 erc20balance = token.balanceOf(address(this));
         return erc20balance;
     }
+
 
 
     function _TransferOtherTokensERC20(IERC20 token, address to, uint256 amount) public onlyOwner{
